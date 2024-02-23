@@ -1,9 +1,11 @@
-const App = () => {
+import {LoginPage} from "../pages/LoginPage/LoginPage.tsx";
+// import {Routes} from "react-router-dom";
+// import {Route} from "react-router-dom";
+
+const App: React.FC = () => {
     return (
-        <div>
-            <p>1234</p>
-        </div>
+        <LoginPage />
     )
 }
 
-export default App
+export default App;
