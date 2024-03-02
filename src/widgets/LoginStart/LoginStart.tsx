@@ -1,6 +1,13 @@
-import {LoginStartButton, LoginStartText, LoginStartTitle, LoginStartContainer} from "../../entities/Login/ui/LoginStart.styled.tsx";
 
-const LoginStart = () => {
+import React from 'react';
+import {LoginStartButton, LoginStartText, LoginStartTitle, LoginStartContainer} from "../../entities/Login/ui/LoginStart/LoginStart.styled.tsx";
+
+
+interface LoginStartProps {
+    onNextStep: () => void;
+}
+
+const LoginStart: React.FC<LoginStartProps> = ({ onNextStep }) => {
     return (
         <LoginStartContainer>
             <LoginStartTitle>
@@ -9,11 +16,11 @@ const LoginStart = () => {
             <LoginStartText>
                 Чтобы удобнее следить за расписанием, рейтингом внутри факультета и другими мероприятиями
             </LoginStartText>
-            <LoginStartButton>
+            <LoginStartButton onClick={onNextStep}>
                 Войти или зарегистрироваться
             </LoginStartButton>
         </LoginStartContainer>
     );
 };
 
-export default LoginStart;
+export { LoginStart };
