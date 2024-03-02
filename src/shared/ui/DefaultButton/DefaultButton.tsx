@@ -13,6 +13,9 @@ const StyledButton = styled.button<DefaultButtonProps>`
     border-radius: ${(props) => props.borderRadius};
     margin-left: ${(props) => props.marginLeft};
     margin-top: ${(props) => props.marginTop};
+    color: ${(props) => props.color};
+    font-family: "Montserrat SemiBold";
+    font-size: ${(props) =>  props.fontSize};
 `;
 
 export type DefaultButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -26,6 +29,8 @@ export type DefaultButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
     onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
     marginLeft: string;
     marginTop: string;
+    color: string;
+    fontSize: string;
 };
 
 const DefaultButton: React.FC<DefaultButtonProps> = (props) => {
