@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './app/App.tsx'
 import {createGlobalStyle} from "styled-components";
 
+
 const Global = createGlobalStyle`
 * {
     margin: 0;
