@@ -1,13 +1,17 @@
-
-import React, { useState } from 'react';
-import {LoginEmailContainer, LoginEmailTitle, LoginEmailError} from "../../entities/Login/ui/LoginInputEmail/LoginInputEmail.styled.tsx";
+import React, {useState} from 'react';
+import {
+    LoginEmailBottom, LoginEmailButton,
+    LoginEmailContainer,
+    LoginEmailError, LoginEmailInput,
+    LoginEmailTitle
+} from "../../entities/Login/ui/LoginInputEmail/LoginEmail.styled.tsx";
 import {DefaultButton, DefaultButtonProps} from "../../shared/ui/DefaultButton/DefaultButton.tsx";
 
 interface LoginInputEmailProps {
     onNextStep: () => void;
 }
 
-const LoginInputEmail: React.FC<LoginInputEmailProps> = ({ onNextStep }) => {
+const LoginEmail: React.FC<LoginInputEmailProps> = ({onNextStep}) => {
     const [email, setEmail] = useState('');
     const [emailError, setEmailError] = useState(false);
 
@@ -17,15 +21,6 @@ const LoginInputEmail: React.FC<LoginInputEmailProps> = ({ onNextStep }) => {
         } else {
             setEmailError(true);
         }
-    };
-
-    const blurHandler = () => {
-        setEmailError(false);
-    };
-
-    const isEmailValid = (email: string) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
     };
 
     const buttonProps: DefaultButtonProps = {
@@ -38,24 +33,42 @@ const LoginInputEmail: React.FC<LoginInputEmailProps> = ({ onNextStep }) => {
         borderRadius: '10px',
         onClick: handleNextButtonClick,
         marginLeft: '0.5rem',
-        marginTop: '0',
+        marginTop: '20px',
         color: '#fff',
-        fontSize: '14px'
+        fontSize: '14px',
+        hoverBackgroundColor: '#94C6AA',
+    };
+
+    const blurHandler = () => {
+        setEmailError(false);
+    };
+
+    const isEmailValid = (email: string) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
     };
 
     return (
         <LoginEmailContainer>
             <LoginEmailTitle>Введите вашу почту</LoginEmailTitle>
             {(emailError) && <LoginEmailError>Введите корректный емейл</LoginEmailError>}
-            <input
+            <LoginEmailInput
                 onBlur={blurHandler}
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
             />
-            <DefaultButton {...buttonProps} />
-        </LoginEmailContainer>
+            <DefaultButton {...buttonProps}/>
+            <LoginEmailBottom>Или</LoginEmailBottom>
+            <LoginEmailButton
+                type="button"
+                onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href='https://vk.com/';
+                }}
+            />
+        </LoginEmailContainer >
     );
 };
 
-export { LoginInputEmail };
+export {LoginEmail};

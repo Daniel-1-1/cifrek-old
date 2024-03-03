@@ -1,7 +1,7 @@
-// LoginInputCode.tsx
+// LoginCode.tsx
 import React from 'react';
 
-const LoginInputCode: React.FC = () => {
+const LoginCode: React.FC = () => {
     return (
         <div>
             {/* Контент виджета */}
@@ -13,4 +13,4 @@ const LoginInputCode: React.FC = () => {
     );
 };
 
-export { LoginInputCode };
+export { LoginCode };

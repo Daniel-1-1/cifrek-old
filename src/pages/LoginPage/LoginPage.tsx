@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {LoginStart} from "../../widgets/LoginStart/LoginStart.tsx";
-import {LoginInputEmail} from "../../widgets/LoginInputEmail/LoginInputEmail.tsx";
-import {LoginInputCode} from "../../widgets/LoginInputCode/LoginInputCode.tsx";
+import {LoginEmail} from "../../widgets/LoginInputEmail/LoginEmail.tsx";
+import {LoginCode} from "../../widgets/LoginInputCode/LoginCode.tsx";
 
 const LoginPage: React.FC = () => {
     // Состояние для отслеживания текущего шага входа
@@ -14,8 +14,8 @@ const LoginPage: React.FC = () => {
     return (
         <div>
             {loginStep === 'start' && <LoginStart onNextStep={goToInputEmail} />}
-            {loginStep === 'inputEmail' && <LoginInputEmail onNextStep={goToInputCode} />}
-            {loginStep === 'inputCode' && <LoginInputCode />}
+            {loginStep === 'inputEmail' && <LoginEmail onNextStep={goToInputCode} />}
+            {loginStep === 'inputCode' && <LoginCode />}
         </div>
     );
 };
