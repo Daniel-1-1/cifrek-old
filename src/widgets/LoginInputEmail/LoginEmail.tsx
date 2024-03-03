@@ -4,7 +4,7 @@ import {
     LoginEmailContainer,
     LoginEmailError, LoginEmailInput,
     LoginEmailTitle
-} from "../../entities/Login/ui/LoginInputEmail/LoginEmail.styled.tsx";
+} from "../../features/Login/ui/LoginInputEmail/LoginEmail.styled.tsx";
 import {DefaultButton, DefaultButtonProps} from "../../shared/ui/DefaultButton/DefaultButton.tsx";
 
 interface LoginInputEmailProps {

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import {LoginStartButton, LoginStartText, LoginStartTitle, LoginStartContainer} from "../../entities/Login/ui/LoginStart/LoginStart.styled.tsx";
+import {LoginStartButton, LoginStartText, LoginStartTitle, LoginStartContainer} from "../../features/Login/ui/LoginStart/LoginStart.styled.tsx";
 
 
 interface LoginStartProps {
