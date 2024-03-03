@@ -16,6 +16,11 @@ const StyledButton = styled.button<DefaultButtonProps>`
     color: ${(props) => props.color};
     font-family: "Montserrat SemiBold";
     font-size: ${(props) =>  props.fontSize};
+    
+    &:hover {
+        background-color: ${(props) => props.hoverBackgroundColor};
+    }
+    
 `;
 
 export type DefaultButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -31,6 +36,7 @@ export type DefaultButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
     marginTop: string;
     color: string;
     fontSize: string;
+    hoverBackgroundColor: string;
 };
 
 const DefaultButton: React.FC<DefaultButtonProps> = (props) => {
